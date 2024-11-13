@@ -1,0 +1,3 @@
+[submodule "Submodules/SRPXX"]
+	path = Submodules/SRPXX
+	url = https://github.com/macmade/SRPXX.git
