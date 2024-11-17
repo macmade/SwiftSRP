@@ -60,7 +60,7 @@ final class SRP: XCTestCase
                     /* Registration */
                     let register =
                     {
-                        let client  = SRPClient( identity: account.identity, hashAlgorithm: algorithm, groupType: group )
+                        let client = SRPClient( identity: account.identity, hashAlgorithm: algorithm, groupType: group )
 
                         // User registers with a password
                         client.setPassword( string: account.password )
