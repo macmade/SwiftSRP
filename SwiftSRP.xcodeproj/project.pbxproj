@@ -675,7 +675,7 @@
 		};
 		056C87D518C8B0F8006260B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 05818D802CDFD32400001415 /* Debug.xcconfig */;
+			baseConfigurationReference = 05818D822CDFD32400001415 /* Debug - Library.xcconfig */;
 			buildSettings = {
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 			};
@@ -683,7 +683,7 @@
 		};
 		056C87D618C8B0F8006260B3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 05818D852CDFD32400001415 /* Release.xcconfig */;
+			baseConfigurationReference = 05818D872CDFD32400001415 /* Release - Library.xcconfig */;
 			buildSettings = {
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 			};
