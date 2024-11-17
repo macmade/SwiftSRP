@@ -49,6 +49,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0506F8AB2CE9933A00C42687 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 058A427D2CE541D700768026 /* SRPXX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 058A43042CE6726C00768026;
+			remoteInfo = "SRPXX-Tests-Standalone";
+		};
 		058A42782CE5407000768026 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 056C87C618C8B0F8006260B3 /* Project object */;
@@ -411,6 +418,7 @@
 			children = (
 				058A42852CE541D700768026 /* libSRPXX.a */,
 				058A42872CE541D700768026 /* SRPXX-Tests.xctest */,
+				0506F8AC2CE9933A00C42687 /* SRPXX-Tests-Standalone */,
 				058A42892CE541D700768026 /* SRPXX-Debug */,
 			);
 			name = Products;
@@ -530,6 +538,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		0506F8AC2CE9933A00C42687 /* SRPXX-Tests-Standalone */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "SRPXX-Tests-Standalone";
+			remoteRef = 0506F8AB2CE9933A00C42687 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		058A42852CE541D700768026 /* libSRPXX.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
