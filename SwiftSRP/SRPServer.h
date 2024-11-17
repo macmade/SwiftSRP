@@ -27,14 +27,9 @@
 #import <SwiftSRP/SRPGroupType.h>
 #import <SwiftSRP/SRPBigNum.h>
 
-typedef NS_OPTIONS( uint64_t, SRPClientOptions )
-{
-    SRPClientOptionsNoUsernameInX = 1 << 0
-};
-
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SRPClient: NSObject
+@interface SRPServer: NSObject
 
 @property( atomic, readonly          ) NSString  * identity;
 @property( atomic, readwrite, strong ) NSData    * salt;
@@ -42,26 +37,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property( atomic, readonly          ) SRPBigNum * g  NS_SWIFT_NAME( g );
 @property( atomic, readonly          ) SRPBigNum * k  NS_SWIFT_NAME( k );
 @property( atomic, readonly          ) SRPBigNum * u  NS_SWIFT_NAME( u );
-@property( atomic, readonly          ) SRPBigNum * a  NS_SWIFT_NAME( a );
-@property( atomic, readonly          ) SRPBigNum * A  NS_SWIFT_NAME( A );
-@property( atomic, readwrite, strong ) SRPBigNum * B  NS_SWIFT_NAME( B );
-@property( atomic, readonly          ) SRPBigNum * x  NS_SWIFT_NAME( x );
-@property( atomic, readonly          ) SRPBigNum * v  NS_SWIFT_NAME( v );
+@property( atomic, readwrite, strong ) SRPBigNum * A  NS_SWIFT_NAME( A );
+@property( atomic, readonly          ) SRPBigNum * b  NS_SWIFT_NAME( b );
+@property( atomic, readonly          ) SRPBigNum * B  NS_SWIFT_NAME( B );
+@property( atomic, readwrite, strong ) SRPBigNum * v  NS_SWIFT_NAME( v );
 @property( atomic, readonly          ) SRPBigNum * S  NS_SWIFT_NAME( S );
 @property( atomic, readonly          ) NSData    * K  NS_SWIFT_NAME( K );
 @property( atomic, readonly          ) NSData    * M1 NS_SWIFT_NAME( M1 );
 @property( atomic, readonly          ) NSData    * M2 NS_SWIFT_NAME( M2 );
 
 - ( instancetype )initWithIdentity: ( NSString * )identity hashAlgorithm: ( SRPHashAlgorithm )hashAlgorithm groupType: ( SRPGroupType )groupType;
-- ( instancetype )initWithIdentity: ( NSString * )identity hashAlgorithm: ( SRPHashAlgorithm )hashAlgorithm groupType: ( SRPGroupType )groupType a: ( nullable SRPBigNum * )a NS_DESIGNATED_INITIALIZER;
-
-- ( void )setPasswordString: ( NSString * )value NS_SWIFT_NAME( setPassword(string:) );
-- ( void )setPasswordData:   ( NSData * )value   NS_SWIFT_NAME( setPassword(data:) );
-
-- ( void )setOptions:   ( uint64_t )value;
-- ( void )addOption:    ( SRPClientOptions )option;
-- ( void )removeOption: ( SRPClientOptions )option;
-- ( BOOL )hasOption:    ( SRPClientOptions )option;
+- ( instancetype )initWithIdentity: ( NSString * )identity hashAlgorithm: ( SRPHashAlgorithm )hashAlgorithm groupType: ( SRPGroupType )groupType b: ( nullable SRPBigNum * )b NS_DESIGNATED_INITIALIZER;
 
 @end
 

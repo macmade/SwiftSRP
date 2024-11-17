@@ -22,43 +22,43 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-#import "SRPClient.h"
+#import "SRPServer.h"
 #import "SRPInternal.hpp"
 #import <SRPXX.hpp>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SRPClient()
+@interface SRPServer()
 
-@property( atomic, readwrite, assign ) SRP::Client * cppObject;
+@property( atomic, readwrite, assign ) SRP::Server * cppObject;
 
 @end
 
 NS_ASSUME_NONNULL_END
 
-@implementation SRPClient
+@implementation SRPServer
 
 - ( instancetype )init
 {
-    return [ self initWithIdentity: @"" hashAlgorithm: SRPHashAlgorithmSHA256 groupType: SRPGroupTypeNG2048 a: nil ];
+    return [ self initWithIdentity: @"" hashAlgorithm: SRPHashAlgorithmSHA256 groupType: SRPGroupTypeNG2048 b: nil ];
 }
 
 - ( instancetype )initWithIdentity: ( NSString * )identity hashAlgorithm: ( SRPHashAlgorithm )hashAlgorithm groupType: ( SRPGroupType )groupType
 {
-    return [ self initWithIdentity: identity hashAlgorithm: hashAlgorithm groupType: groupType a: nil ];
+    return [ self initWithIdentity: identity hashAlgorithm: hashAlgorithm groupType: groupType b: nil ];
 }
 
-- ( instancetype )initWithIdentity: ( NSString * )identity hashAlgorithm: ( SRPHashAlgorithm )hashAlgorithm groupType: ( SRPGroupType )groupType a: ( nullable SRPBigNum * )a
+- ( instancetype )initWithIdentity: ( NSString * )identity hashAlgorithm: ( SRPHashAlgorithm )hashAlgorithm groupType: ( SRPGroupType )groupType b: ( nullable SRPBigNum * )b
 {
     if( ( self = [ super init ] ) )
     {
-        if( a != nil )
+        if( b != nil )
         {
-            self.cppObject = new SRP::Client( identity.UTF8String, static_cast< SRP::HashAlgorithm >( hashAlgorithm ), static_cast< SRP::Base::GroupType >( groupType ), *( a.cppObject ) );
+            self.cppObject = new SRP::Server( identity.UTF8String, static_cast< SRP::HashAlgorithm >( hashAlgorithm ), static_cast< SRP::Base::GroupType >( groupType ), *( b.cppObject ) );
         }
         else
         {
-            self.cppObject = new SRP::Client( identity.UTF8String, static_cast< SRP::HashAlgorithm >( hashAlgorithm ), static_cast< SRP::Base::GroupType >( groupType ) );
+            self.cppObject = new SRP::Server( identity.UTF8String, static_cast< SRP::HashAlgorithm >( hashAlgorithm ), static_cast< SRP::Base::GroupType >( groupType ) );
         }
     }
     
@@ -105,14 +105,19 @@ NS_ASSUME_NONNULL_END
     return [ [ SRPBigNum alloc ] initWithCPPObject: self.cppObject->u() ];
 }
 
-- ( SRPBigNum * )a
-{
-    return [ [ SRPBigNum alloc ] initWithCPPObject: self.cppObject->a() ];
-}
-
 - ( SRPBigNum * )A
 {
     return [ [ SRPBigNum alloc ] initWithCPPObject: self.cppObject->A() ];
+}
+
+- ( void )setA: ( SRPBigNum * )value
+{
+    self.cppObject->setA( *( value.cppObject ) );
+}
+
+- ( SRPBigNum * )b
+{
+    return [ [ SRPBigNum alloc ] initWithCPPObject: self.cppObject->b() ];
 }
 
 - ( SRPBigNum * )B
@@ -120,19 +125,14 @@ NS_ASSUME_NONNULL_END
     return [ [ SRPBigNum alloc ] initWithCPPObject: self.cppObject->B() ];
 }
 
-- ( void )setB: ( SRPBigNum * )value
-{
-    self.cppObject->setB( *( value.cppObject ) );
-}
-
-- ( SRPBigNum * )x
-{
-    return [ [ SRPBigNum alloc ] initWithCPPObject: self.cppObject->x() ];
-}
-
 - ( SRPBigNum * )v
 {
     return [ [ SRPBigNum alloc ] initWithCPPObject: self.cppObject->v() ];
+}
+
+- ( void )setV: ( SRPBigNum * )value
+{
+    self.cppObject->setV( *( value.cppObject ) );
 }
 
 - ( SRPBigNum * )S
@@ -153,36 +153,6 @@ NS_ASSUME_NONNULL_END
 - ( NSData * )M2
 {
     return SRPDataWithCPPData( self.cppObject->M2() );
-}
-
-- ( void )setPasswordString: ( NSString * )value
-{
-    self.cppObject->setPassword( value.UTF8String );
-}
-
-- ( void )setPasswordData: ( NSData * )value
-{
-    self.cppObject->setPassword( SRPCPPDataWithData( value ) );
-}
-
-- ( void )setOptions: ( uint64_t )value
-{
-    self.cppObject->setOptions( value );
-}
-
-- ( void )addOption: ( SRPClientOptions )option
-{
-    self.cppObject->addOption( static_cast< SRP::Client::Options >( option ) );
-}
-
-- ( void )removeOption: ( SRPClientOptions )option
-{
-    self.cppObject->removeOption( static_cast< SRP::Client::Options >( option ) );
-}
-
-- ( BOOL )hasOption: ( SRPClientOptions )option
-{
-    return self.cppObject->hasOption( static_cast< SRP::Client::Options >( option ) );
 }
 
 @end

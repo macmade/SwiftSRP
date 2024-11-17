@@ -22,17 +22,18 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+#import <Foundation/Foundation.h>
 #import <SwiftSRP/SRPHashAlgorithm.h>
-#import <SwiftSRP/SRPGroupType.h>
-#import <SwiftSRP/SRPStringHexFormat.h>
-#import <SwiftSRP/SRPBigNum.h>
-#import <SwiftSRP/SRPRandom.h>
-#import <SwiftSRP/SRPBase64.h>
-#import <SwiftSRP/SRPSHA1.h>
-#import <SwiftSRP/SRPSHA224.h>
-#import <SwiftSRP/SRPSHA256.h>
-#import <SwiftSRP/SRPSHA384.h>
-#import <SwiftSRP/SRPSHA512.h>
-#import <SwiftSRP/SRPPBKDF2.h>
-#import <SwiftSRP/SRPClient.h>
-#import <SwiftSRP/SRPServer.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface SRPPBKDF2: NSObject
+
++ ( NSData * )HMAC: ( SRPHashAlgorithm )hashAlgorithm passwordData:   ( NSData   * )password salt: ( NSData * )salt iterations: ( uint32_t )iterations keyLength: ( size_t )keyLength NS_SWIFT_NAME( hmac(hashAlgorithm:password:salt:iterations:keyLength:) );
++ ( NSData * )HMAC: ( SRPHashAlgorithm )hashAlgorithm passwordString: ( NSString * )password salt: ( NSData * )salt iterations: ( uint32_t )iterations keyLength: ( size_t )keyLength NS_SWIFT_NAME( hmac(hashAlgorithm:password:salt:iterations:keyLength:) );
+
+- ( instancetype )init NS_UNAVAILABLE;
+
+@end
+
+NS_ASSUME_NONNULL_END

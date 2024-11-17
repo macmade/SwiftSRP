@@ -22,17 +22,21 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-#import <SwiftSRP/SRPHashAlgorithm.h>
-#import <SwiftSRP/SRPGroupType.h>
+#import <Foundation/Foundation.h>
 #import <SwiftSRP/SRPStringHexFormat.h>
-#import <SwiftSRP/SRPBigNum.h>
-#import <SwiftSRP/SRPRandom.h>
-#import <SwiftSRP/SRPBase64.h>
-#import <SwiftSRP/SRPSHA1.h>
-#import <SwiftSRP/SRPSHA224.h>
-#import <SwiftSRP/SRPSHA256.h>
-#import <SwiftSRP/SRPSHA384.h>
-#import <SwiftSRP/SRPSHA512.h>
-#import <SwiftSRP/SRPPBKDF2.h>
-#import <SwiftSRP/SRPClient.h>
-#import <SwiftSRP/SRPServer.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface SRPSHA256: NSObject
+
++ ( NSData * )bytesFromData:    ( NSData * )data  NS_SWIFT_NAME( bytes(from:) );
++ ( NSData * )bytesFromString: ( NSString * )data NS_SWIFT_NAME( bytes(from:) );
+
++ ( NSString * )stringFromData:   ( NSData * )data   format: ( SRPStringHexFormat )format NS_SWIFT_NAME( string(from:format:) );
++ ( NSString * )stringFromString: ( NSString * )data format: ( SRPStringHexFormat )format NS_SWIFT_NAME( string(from:format:) );
+
+- ( instancetype )init NS_UNAVAILABLE;
+
+@end
+
+NS_ASSUME_NONNULL_END

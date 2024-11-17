@@ -22,17 +22,13 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-#import <SwiftSRP/SRPHashAlgorithm.h>
-#import <SwiftSRP/SRPGroupType.h>
-#import <SwiftSRP/SRPStringHexFormat.h>
-#import <SwiftSRP/SRPBigNum.h>
-#import <SwiftSRP/SRPRandom.h>
-#import <SwiftSRP/SRPBase64.h>
-#import <SwiftSRP/SRPSHA1.h>
-#import <SwiftSRP/SRPSHA224.h>
-#import <SwiftSRP/SRPSHA256.h>
-#import <SwiftSRP/SRPSHA384.h>
-#import <SwiftSRP/SRPSHA512.h>
-#import <SwiftSRP/SRPPBKDF2.h>
-#import <SwiftSRP/SRPClient.h>
-#import <SwiftSRP/SRPServer.h>
+#import <Foundation/Foundation.h>
+#import <SRPXX.hpp>
+
+NS_ASSUME_NONNULL_BEGIN
+
+NSString             * SRPStringWithCPPString( const std::string & s );
+NSData               * SRPDataWithCPPData( const std::vector< uint8_t > & d );
+std::vector< uint8_t > SRPCPPDataWithData( NSData * data );
+
+NS_ASSUME_NONNULL_END

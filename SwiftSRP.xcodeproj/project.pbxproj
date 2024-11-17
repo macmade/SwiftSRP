@@ -7,12 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0506F89F2CE91DF400C42687 /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506F89E2CE91DF200C42687 /* SHA1.swift */; };
+		0506F8A12CE9210100C42687 /* SHA224.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506F8A02CE920FE00C42687 /* SHA224.swift */; };
+		0506F8A32CE9210800C42687 /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506F8A22CE9210500C42687 /* SHA256.swift */; };
+		0506F8A52CE9210E00C42687 /* SHA384.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506F8A42CE9210B00C42687 /* SHA384.swift */; };
+		0506F8A72CE9211300C42687 /* SHA512.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506F8A62CE9211100C42687 /* SHA512.swift */; };
 		058A42732CE53F5A00768026 /* SwiftSRP.h in Headers */ = {isa = PBXBuildFile; fileRef = 058A42712CE53F5A00768026 /* SwiftSRP.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		058A42772CE5406800768026 /* SwiftSRP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058A42692CE53F4500768026 /* SwiftSRP.framework */; };
 		058A427C2CE5416800768026 /* SRP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058A42752CE5405100768026 /* SRP.swift */; };
 		058A428A2CE541E800768026 /* libSRPXX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 058A42852CE541D700768026 /* libSRPXX.a */; };
 		058A428E2CE5425600768026 /* SRPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 058A428D2CE5425200768026 /* SRPClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		058A42902CE5425B00768026 /* SRPClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = 058A428F2CE5425A00768026 /* SRPClient.mm */; };
+		058A42922CE543B200768026 /* SRPHashAlgorithm.h in Headers */ = {isa = PBXBuildFile; fileRef = 058A42912CE543AA00768026 /* SRPHashAlgorithm.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		058A42942CE5441000768026 /* SRPGroupType.h in Headers */ = {isa = PBXBuildFile; fileRef = 058A42932CE5440A00768026 /* SRPGroupType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		058A42962CE5444300768026 /* SRPBigNum.mm in Sources */ = {isa = PBXBuildFile; fileRef = 058A42952CE5443E00768026 /* SRPBigNum.mm */; };
+		058A42982CE5444A00768026 /* SRPBigNum.h in Headers */ = {isa = PBXBuildFile; fileRef = 058A42972CE5444700768026 /* SRPBigNum.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		058A429A2CE547A400768026 /* SRPInternal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 058A42992CE547A000768026 /* SRPInternal.hpp */; };
+		058A429C2CE547AC00768026 /* SRPInternal.mm in Sources */ = {isa = PBXBuildFile; fileRef = 058A429B2CE547AA00768026 /* SRPInternal.mm */; };
+		058A429E2CE603E100768026 /* SRPServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 058A429D2CE603DC00768026 /* SRPServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		058A42A02CE603E600768026 /* SRPServer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 058A429F2CE603E500768026 /* SRPServer.mm */; };
+		058A42A22CE605E000768026 /* SRPRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = 058A42A12CE605DB00768026 /* SRPRandom.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		058A42A42CE605E700768026 /* SRPRandom.mm in Sources */ = {isa = PBXBuildFile; fileRef = 058A42A32CE605E300768026 /* SRPRandom.mm */; };
+		058A42A62CE60F7500768026 /* SRPSHA1.h in Headers */ = {isa = PBXBuildFile; fileRef = 058A42A52CE60F7200768026 /* SRPSHA1.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		058A42A82CE60F7A00768026 /* SRPSHA1.mm in Sources */ = {isa = PBXBuildFile; fileRef = 058A42A72CE60F7900768026 /* SRPSHA1.mm */; };
+		058A42AE2CE616E000768026 /* SRPStringHexFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 058A42AD2CE616D500768026 /* SRPStringHexFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		058A42B72CE6187100768026 /* SRPSHA384.mm in Sources */ = {isa = PBXBuildFile; fileRef = 058A42B42CE6187100768026 /* SRPSHA384.mm */; };
+		058A42B82CE6187100768026 /* SRPSHA224.mm in Sources */ = {isa = PBXBuildFile; fileRef = 058A42B02CE6187100768026 /* SRPSHA224.mm */; };
+		058A42B92CE6187100768026 /* SRPSHA256.mm in Sources */ = {isa = PBXBuildFile; fileRef = 058A42B22CE6187100768026 /* SRPSHA256.mm */; };
+		058A42BA2CE6187100768026 /* SRPSHA512.mm in Sources */ = {isa = PBXBuildFile; fileRef = 058A42B62CE6187100768026 /* SRPSHA512.mm */; };
+		058A42BB2CE6187100768026 /* SRPSHA224.h in Headers */ = {isa = PBXBuildFile; fileRef = 058A42AF2CE6187100768026 /* SRPSHA224.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		058A42BC2CE6187100768026 /* SRPSHA384.h in Headers */ = {isa = PBXBuildFile; fileRef = 058A42B32CE6187100768026 /* SRPSHA384.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		058A42BD2CE6187100768026 /* SRPSHA512.h in Headers */ = {isa = PBXBuildFile; fileRef = 058A42B52CE6187100768026 /* SRPSHA512.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		058A42BE2CE6187100768026 /* SRPSHA256.h in Headers */ = {isa = PBXBuildFile; fileRef = 058A42B12CE6187100768026 /* SRPSHA256.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		058A42C02CE6192900768026 /* SRPBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = 058A42BF2CE6192400768026 /* SRPBase64.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		058A42C22CE6192D00768026 /* SRPBase64.mm in Sources */ = {isa = PBXBuildFile; fileRef = 058A42C12CE6192C00768026 /* SRPBase64.mm */; };
+		058A42C42CE61A8200768026 /* SRPPBKDF2.h in Headers */ = {isa = PBXBuildFile; fileRef = 058A42C32CE61A7C00768026 /* SRPPBKDF2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		058A42C62CE61A8F00768026 /* SRPPBKDF2.mm in Sources */ = {isa = PBXBuildFile; fileRef = 058A42C52CE61A8C00768026 /* SRPPBKDF2.mm */; };
+		058A42C82CE62A2400768026 /* PBKDF2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058A42C72CE62A2000768026 /* PBKDF2.swift */; };
+		058A42DE2CE6445000768026 /* Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058A42DD2CE6444D00768026 /* Base64.swift */; };
+		058A42E02CE646E400768026 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058A42DF2CE646E200768026 /* Random.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +87,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0506F89E2CE91DF200C42687 /* SHA1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHA1.swift; sourceTree = "<group>"; };
+		0506F8A02CE920FE00C42687 /* SHA224.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHA224.swift; sourceTree = "<group>"; };
+		0506F8A22CE9210500C42687 /* SHA256.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHA256.swift; sourceTree = "<group>"; };
+		0506F8A42CE9210B00C42687 /* SHA384.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHA384.swift; sourceTree = "<group>"; };
+		0506F8A62CE9211100C42687 /* SHA512.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHA512.swift; sourceTree = "<group>"; };
 		051F09651946EB70004B6E47 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		056C58BF1B1898FF00C6214A /* SwiftSRP-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftSRP-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05818D4F2CDFD2ED00001415 /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
@@ -110,6 +148,34 @@
 		058A427D2CE541D700768026 /* SRPXX.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SRPXX.xcodeproj; path = Submodules/SRPXX/SRPXX.xcodeproj; sourceTree = "<group>"; };
 		058A428D2CE5425200768026 /* SRPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRPClient.h; sourceTree = "<group>"; };
 		058A428F2CE5425A00768026 /* SRPClient.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SRPClient.mm; sourceTree = "<group>"; };
+		058A42912CE543AA00768026 /* SRPHashAlgorithm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRPHashAlgorithm.h; sourceTree = "<group>"; };
+		058A42932CE5440A00768026 /* SRPGroupType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRPGroupType.h; sourceTree = "<group>"; };
+		058A42952CE5443E00768026 /* SRPBigNum.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SRPBigNum.mm; sourceTree = "<group>"; };
+		058A42972CE5444700768026 /* SRPBigNum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRPBigNum.h; sourceTree = "<group>"; };
+		058A42992CE547A000768026 /* SRPInternal.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SRPInternal.hpp; sourceTree = "<group>"; };
+		058A429B2CE547AA00768026 /* SRPInternal.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SRPInternal.mm; sourceTree = "<group>"; };
+		058A429D2CE603DC00768026 /* SRPServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRPServer.h; sourceTree = "<group>"; };
+		058A429F2CE603E500768026 /* SRPServer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SRPServer.mm; sourceTree = "<group>"; };
+		058A42A12CE605DB00768026 /* SRPRandom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRPRandom.h; sourceTree = "<group>"; };
+		058A42A32CE605E300768026 /* SRPRandom.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SRPRandom.mm; sourceTree = "<group>"; };
+		058A42A52CE60F7200768026 /* SRPSHA1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRPSHA1.h; sourceTree = "<group>"; };
+		058A42A72CE60F7900768026 /* SRPSHA1.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SRPSHA1.mm; sourceTree = "<group>"; };
+		058A42AD2CE616D500768026 /* SRPStringHexFormat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRPStringHexFormat.h; sourceTree = "<group>"; };
+		058A42AF2CE6187100768026 /* SRPSHA224.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRPSHA224.h; sourceTree = "<group>"; };
+		058A42B02CE6187100768026 /* SRPSHA224.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SRPSHA224.mm; sourceTree = "<group>"; };
+		058A42B12CE6187100768026 /* SRPSHA256.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRPSHA256.h; sourceTree = "<group>"; };
+		058A42B22CE6187100768026 /* SRPSHA256.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SRPSHA256.mm; sourceTree = "<group>"; };
+		058A42B32CE6187100768026 /* SRPSHA384.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRPSHA384.h; sourceTree = "<group>"; };
+		058A42B42CE6187100768026 /* SRPSHA384.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SRPSHA384.mm; sourceTree = "<group>"; };
+		058A42B52CE6187100768026 /* SRPSHA512.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRPSHA512.h; sourceTree = "<group>"; };
+		058A42B62CE6187100768026 /* SRPSHA512.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SRPSHA512.mm; sourceTree = "<group>"; };
+		058A42BF2CE6192400768026 /* SRPBase64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRPBase64.h; sourceTree = "<group>"; };
+		058A42C12CE6192C00768026 /* SRPBase64.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SRPBase64.mm; sourceTree = "<group>"; };
+		058A42C32CE61A7C00768026 /* SRPPBKDF2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRPPBKDF2.h; sourceTree = "<group>"; };
+		058A42C52CE61A8C00768026 /* SRPPBKDF2.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SRPPBKDF2.mm; sourceTree = "<group>"; };
+		058A42C72CE62A2000768026 /* PBKDF2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBKDF2.swift; sourceTree = "<group>"; };
+		058A42DD2CE6444D00768026 /* Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64.swift; sourceTree = "<group>"; };
+		058A42DF2CE646E200768026 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,9 +351,34 @@
 		058A42722CE53F5A00768026 /* SwiftSRP */ = {
 			isa = PBXGroup;
 			children = (
-				058A42712CE53F5A00768026 /* SwiftSRP.h */,
+				058A42BF2CE6192400768026 /* SRPBase64.h */,
+				058A42C12CE6192C00768026 /* SRPBase64.mm */,
+				058A42972CE5444700768026 /* SRPBigNum.h */,
+				058A42952CE5443E00768026 /* SRPBigNum.mm */,
 				058A428D2CE5425200768026 /* SRPClient.h */,
 				058A428F2CE5425A00768026 /* SRPClient.mm */,
+				058A42932CE5440A00768026 /* SRPGroupType.h */,
+				058A42912CE543AA00768026 /* SRPHashAlgorithm.h */,
+				058A42992CE547A000768026 /* SRPInternal.hpp */,
+				058A429B2CE547AA00768026 /* SRPInternal.mm */,
+				058A42C32CE61A7C00768026 /* SRPPBKDF2.h */,
+				058A42C52CE61A8C00768026 /* SRPPBKDF2.mm */,
+				058A42A12CE605DB00768026 /* SRPRandom.h */,
+				058A42A32CE605E300768026 /* SRPRandom.mm */,
+				058A429D2CE603DC00768026 /* SRPServer.h */,
+				058A429F2CE603E500768026 /* SRPServer.mm */,
+				058A42A52CE60F7200768026 /* SRPSHA1.h */,
+				058A42A72CE60F7900768026 /* SRPSHA1.mm */,
+				058A42AF2CE6187100768026 /* SRPSHA224.h */,
+				058A42B02CE6187100768026 /* SRPSHA224.mm */,
+				058A42B12CE6187100768026 /* SRPSHA256.h */,
+				058A42B22CE6187100768026 /* SRPSHA256.mm */,
+				058A42B32CE6187100768026 /* SRPSHA384.h */,
+				058A42B42CE6187100768026 /* SRPSHA384.mm */,
+				058A42B52CE6187100768026 /* SRPSHA512.h */,
+				058A42B62CE6187100768026 /* SRPSHA512.mm */,
+				058A42AD2CE616D500768026 /* SRPStringHexFormat.h */,
+				058A42712CE53F5A00768026 /* SwiftSRP.h */,
 			);
 			path = SwiftSRP;
 			sourceTree = "<group>";
@@ -295,6 +386,14 @@
 		058A42742CE53FC000768026 /* SwiftSRP-Tests */ = {
 			isa = PBXGroup;
 			children = (
+				058A42DD2CE6444D00768026 /* Base64.swift */,
+				058A42C72CE62A2000768026 /* PBKDF2.swift */,
+				058A42DF2CE646E200768026 /* Random.swift */,
+				0506F89E2CE91DF200C42687 /* SHA1.swift */,
+				0506F8A02CE920FE00C42687 /* SHA224.swift */,
+				0506F8A22CE9210500C42687 /* SHA256.swift */,
+				0506F8A42CE9210B00C42687 /* SHA384.swift */,
+				0506F8A62CE9211100C42687 /* SHA512.swift */,
 				058A42752CE5405100768026 /* SRP.swift */,
 			);
 			path = "SwiftSRP-Tests";
@@ -324,8 +423,22 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				058A42982CE5444A00768026 /* SRPBigNum.h in Headers */,
+				058A429E2CE603E100768026 /* SRPServer.h in Headers */,
+				058A42942CE5441000768026 /* SRPGroupType.h in Headers */,
 				058A428E2CE5425600768026 /* SRPClient.h in Headers */,
+				058A42922CE543B200768026 /* SRPHashAlgorithm.h in Headers */,
+				058A42BB2CE6187100768026 /* SRPSHA224.h in Headers */,
+				058A42BC2CE6187100768026 /* SRPSHA384.h in Headers */,
+				058A42BD2CE6187100768026 /* SRPSHA512.h in Headers */,
+				058A42BE2CE6187100768026 /* SRPSHA256.h in Headers */,
 				058A42732CE53F5A00768026 /* SwiftSRP.h in Headers */,
+				058A42A62CE60F7500768026 /* SRPSHA1.h in Headers */,
+				058A429A2CE547A400768026 /* SRPInternal.hpp in Headers */,
+				058A42C02CE6192900768026 /* SRPBase64.h in Headers */,
+				058A42A22CE605E000768026 /* SRPRandom.h in Headers */,
+				058A42AE2CE616E000768026 /* SRPStringHexFormat.h in Headers */,
+				058A42C42CE61A8200768026 /* SRPPBKDF2.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +575,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0506F8A72CE9211300C42687 /* SHA512.swift in Sources */,
+				0506F89F2CE91DF400C42687 /* SHA1.swift in Sources */,
+				0506F8A32CE9210800C42687 /* SHA256.swift in Sources */,
+				0506F8A52CE9210E00C42687 /* SHA384.swift in Sources */,
+				058A42E02CE646E400768026 /* Random.swift in Sources */,
+				058A42C82CE62A2400768026 /* PBKDF2.swift in Sources */,
+				0506F8A12CE9210100C42687 /* SHA224.swift in Sources */,
+				058A42DE2CE6445000768026 /* Base64.swift in Sources */,
 				058A427C2CE5416800768026 /* SRP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,7 +591,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				058A42A82CE60F7A00768026 /* SRPSHA1.mm in Sources */,
+				058A42C22CE6192D00768026 /* SRPBase64.mm in Sources */,
+				058A42B72CE6187100768026 /* SRPSHA384.mm in Sources */,
+				058A42B82CE6187100768026 /* SRPSHA224.mm in Sources */,
+				058A42B92CE6187100768026 /* SRPSHA256.mm in Sources */,
+				058A42BA2CE6187100768026 /* SRPSHA512.mm in Sources */,
+				058A42A02CE603E600768026 /* SRPServer.mm in Sources */,
 				058A42902CE5425B00768026 /* SRPClient.mm in Sources */,
+				058A42A42CE605E700768026 /* SRPRandom.mm in Sources */,
+				058A42962CE5444300768026 /* SRPBigNum.mm in Sources */,
+				058A42C62CE61A8F00768026 /* SRPPBKDF2.mm in Sources */,
+				058A429C2CE547AC00768026 /* SRPInternal.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

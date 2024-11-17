@@ -22,17 +22,41 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-#import <SwiftSRP/SRPHashAlgorithm.h>
-#import <SwiftSRP/SRPGroupType.h>
-#import <SwiftSRP/SRPStringHexFormat.h>
-#import <SwiftSRP/SRPBigNum.h>
-#import <SwiftSRP/SRPRandom.h>
-#import <SwiftSRP/SRPBase64.h>
-#import <SwiftSRP/SRPSHA1.h>
-#import <SwiftSRP/SRPSHA224.h>
-#import <SwiftSRP/SRPSHA256.h>
-#import <SwiftSRP/SRPSHA384.h>
-#import <SwiftSRP/SRPSHA512.h>
-#import <SwiftSRP/SRPPBKDF2.h>
-#import <SwiftSRP/SRPClient.h>
-#import <SwiftSRP/SRPServer.h>
+import Foundation
+import SwiftSRP
+import XCTest
+
+final class Random: XCTestCase
+{
+    func testEncode()
+    {
+        let sizes: [ size_t ] = [ 128, 256, 512, 1024, 2048, 4096 ]
+
+        sizes.forEach
+        {
+            size in
+
+            let data = [ 0 ..< 100 ].map
+            {
+                _ in SRPRandom.bytes( count: size )
+            }
+
+            data.enumerated().forEach
+            {
+                d in
+
+                XCTAssertEqual( size, d.element.count )
+
+                data.enumerated().forEach
+                {
+                    if $0.offset == d.offset
+                    {
+                        return
+                    }
+
+                    XCTAssertTrue( d.element != $0.element )
+                }
+            }
+        }
+    }
+}

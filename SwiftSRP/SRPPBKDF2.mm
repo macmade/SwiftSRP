@@ -22,17 +22,20 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-#import <SwiftSRP/SRPHashAlgorithm.h>
-#import <SwiftSRP/SRPGroupType.h>
-#import <SwiftSRP/SRPStringHexFormat.h>
-#import <SwiftSRP/SRPBigNum.h>
-#import <SwiftSRP/SRPRandom.h>
-#import <SwiftSRP/SRPBase64.h>
-#import <SwiftSRP/SRPSHA1.h>
-#import <SwiftSRP/SRPSHA224.h>
-#import <SwiftSRP/SRPSHA256.h>
-#import <SwiftSRP/SRPSHA384.h>
-#import <SwiftSRP/SRPSHA512.h>
-#import <SwiftSRP/SRPPBKDF2.h>
-#import <SwiftSRP/SRPClient.h>
-#import <SwiftSRP/SRPServer.h>
+#import "SRPPBKDF2.h"
+#import "SRPInternal.hpp"
+#import <SRPXX.hpp>
+
+@implementation SRPPBKDF2
+
++ ( NSData * )HMAC: ( SRPHashAlgorithm )hashAlgorithm passwordData:   ( NSData * )password salt: ( NSData * )salt iterations: ( uint32_t )iterations keyLength: ( size_t )keyLength
+{
+    return SRPDataWithCPPData( SRP::PBKDF2::HMAC( static_cast< SRP::HashAlgorithm >( hashAlgorithm ), SRPCPPDataWithData( password ), SRPCPPDataWithData( salt ), iterations, keyLength ) );
+}
+
++ ( NSData * )HMAC: ( SRPHashAlgorithm )hashAlgorithm passwordString: ( NSString * )password salt: ( NSData * )salt iterations: ( uint32_t )iterations keyLength: ( size_t )keyLength
+{
+    return SRPDataWithCPPData( SRP::PBKDF2::HMAC( static_cast< SRP::HashAlgorithm >( hashAlgorithm ), password.UTF8String, SRPCPPDataWithData( salt ), iterations, keyLength ) );
+}
+
+@end

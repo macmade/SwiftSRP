@@ -22,17 +22,30 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-#import <SwiftSRP/SRPHashAlgorithm.h>
-#import <SwiftSRP/SRPGroupType.h>
-#import <SwiftSRP/SRPStringHexFormat.h>
-#import <SwiftSRP/SRPBigNum.h>
-#import <SwiftSRP/SRPRandom.h>
-#import <SwiftSRP/SRPBase64.h>
-#import <SwiftSRP/SRPSHA1.h>
-#import <SwiftSRP/SRPSHA224.h>
-#import <SwiftSRP/SRPSHA256.h>
-#import <SwiftSRP/SRPSHA384.h>
-#import <SwiftSRP/SRPSHA512.h>
-#import <SwiftSRP/SRPPBKDF2.h>
-#import <SwiftSRP/SRPClient.h>
-#import <SwiftSRP/SRPServer.h>
+#import "SRPSHA256.h"
+#import "SRPInternal.hpp"
+#import <SRPXX.hpp>
+
+@implementation SRPSHA256
+
++ ( NSData * )bytesFromData: ( NSData * )data
+{
+    return SRPDataWithCPPData( SRP::SHA256::bytes( SRPCPPDataWithData( data ) ) );
+}
+
++ ( NSData * )bytesFromString: ( NSString * )data
+{
+    return SRPDataWithCPPData( SRP::SHA256::bytes( data.UTF8String ) );
+}
+
++ ( NSString * )stringFromData: ( NSData * )data   format: ( SRPStringHexFormat )format
+{
+    return SRPStringWithCPPString( SRP::SHA256::string( SRPCPPDataWithData( data ), static_cast< SRP::String::HexFormat >( format ) ) );
+}
+
++ ( NSString * )stringFromString: ( NSString * )data format: ( SRPStringHexFormat )format
+{
+    return SRPStringWithCPPString( SRP::SHA256::string( data.UTF8String, static_cast< SRP::String::HexFormat >( format ) ) );
+}
+
+@end

@@ -22,17 +22,53 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-#import <SwiftSRP/SRPHashAlgorithm.h>
-#import <SwiftSRP/SRPGroupType.h>
-#import <SwiftSRP/SRPStringHexFormat.h>
-#import <SwiftSRP/SRPBigNum.h>
-#import <SwiftSRP/SRPRandom.h>
-#import <SwiftSRP/SRPBase64.h>
-#import <SwiftSRP/SRPSHA1.h>
-#import <SwiftSRP/SRPSHA224.h>
-#import <SwiftSRP/SRPSHA256.h>
-#import <SwiftSRP/SRPSHA384.h>
-#import <SwiftSRP/SRPSHA512.h>
-#import <SwiftSRP/SRPPBKDF2.h>
-#import <SwiftSRP/SRPClient.h>
-#import <SwiftSRP/SRPServer.h>
+import Foundation
+import SwiftSRP
+import XCTest
+
+final class Base64: XCTestCase
+{
+    func testEncode()
+    {
+        Base64.testData.forEach
+        {
+            XCTAssertTrue( SRPBase64.encode( data: $0.decoded.data( using: .utf8 ) ?? Data() ) == $0.encoded )
+        }
+    }
+
+    func testDecode()
+    {
+        Base64.testData.forEach
+        {
+            XCTAssertTrue( SRPBase64.decode( string: $0.encoded ) == $0.decoded.data( using: .utf8 ) ?? Data() )
+        }
+    }
+
+    private static let testData: [ ( encoded: String, decoded: String ) ] =
+        [
+            (
+                "",
+                ""
+            ),
+            (
+                "QQ==",
+                "A"
+            ),
+            (
+                "aGVsbG8sIHdvcmxk",
+                "hello, world"
+            ),
+            (
+                "aGVsbG8sIHdvcmxkIQ==",
+                "hello, world!"
+            ),
+            (
+                "aGVsbG8sIHVuaXZlcnNl",
+                "hello, universe"
+            ),
+            (
+                "TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdC4=",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            ),
+        ]
+}
